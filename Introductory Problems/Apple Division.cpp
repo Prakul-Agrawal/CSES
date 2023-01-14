@@ -22,21 +22,25 @@ typedef vector<vii> vvii;
 #define max_heap(x) priority_queue<x>
 #define min_heap(x) priority_queue<x, vector<x>, greater<x>>
 
-void min_diff(vll &p, int &n, ll &total, int pos, int sum, ll &diff)
+void min_diff(vll &p, int &n, ll &total, int pos, ll sum, ll &diff)
 {
     if (pos == n)
     {
         diff = min(abs(total - 2 * sum), diff);
         return;
     }
+    min_diff(p,n,total,pos+1,sum+p[pos],diff);
+    min_diff(p,n,total,pos+1,sum,diff);
 }
 
 void solve(){
     int n; cin >> n;
     vll p(n);
     rep(i,0,n) cin >> p[i];
-    ll total = accumulate(all(p),0), val = total / 2;
-
+    ll total = accumulate(all(p),0LL);
+    ll diff = total;
+    min_diff(p,n,total,0,0LL,diff);
+    cout << diff << endl;
 }
 
 int main() 
