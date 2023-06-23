@@ -30,11 +30,10 @@ void dfs(int n, int m, vvi &vis, int x, int y, vector<string> &adj){
 }
  
 void solve(){
-    int n, m;
+    int n, m, count = 0;;
     cin>>n>>m;
     vector<string> adj(n);
     rep(i,0,n) cin>>adj[i];
-    int count = 0;
     vvi vis(n, vi(m, 0));
     rep(i,0,n){
         rep(j,0,m){
