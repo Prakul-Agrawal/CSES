@@ -26,7 +26,7 @@ void solve(){
     cin>>n;
     vi a(n);
     rep(i,0,n) cin>>a[i];
-    int sum = 0, ans = 0;
+    int sum = 0;
     rep(i,0,n) sum += a[i];
     vvi dp(sum+1, vi(n+1, 0));
     rep(i,0,n+1) dp[0][i] = 1;
@@ -35,6 +35,7 @@ void solve(){
             dp[i][j] = dp[i][j-1] | (i >= a[j-1] ? dp[i-a[j-1]][j-1] : 0);
         }
     }
+    int ans = 0;
     rep(i,1,sum+1) ans += dp[i][n];
     cout<<ans<<endl;
     rep(i,1,sum+1){
