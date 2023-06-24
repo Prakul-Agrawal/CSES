@@ -22,6 +22,13 @@ typedef vector<vii> vvii;
 #define max_heap(x) priority_queue<x>
 #define min_heap(x) priority_queue<x, vector<x>, greater<x>>
 
+// ------------------------------ Explanation ------------------------------ //
+// dp[i] represents number of ways to make sum i using a die
+// Since the die only shows 1, 2, 3, 4, 5, 6, we can make sum i using 
+// sum i - 1, i - 2, i - 3, i - 4, i - 5, i - 6
+// Hence, dp[i] = dp[i-1] + dp[i-2] + dp[i-3] + dp[i-4] + dp[i-5] + dp[i-6]
+// -------------------------------------------------------------------------- //
+
 void solve(){
     int n;
     cin >> n;

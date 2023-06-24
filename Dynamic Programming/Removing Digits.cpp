@@ -22,6 +22,12 @@ typedef vector<vii> vvii;
 #define max_heap(x) priority_queue<x>
 #define min_heap(x) priority_queue<x, vector<x>, greater<x>>
 
+// ------------------------------ Explanation ------------------------------ //
+// dp[i] represents minimum number of steps required to reach 0 from i
+// For each number, we subtract each digit from original number and check if the
+// number of steps required to reach 0 is less than the current value of dp[i]
+// -------------------------------------------------------------------------- //
+
 void solve(){
     int n,temp,digit;
     string s;

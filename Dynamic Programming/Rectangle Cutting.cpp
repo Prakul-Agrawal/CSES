@@ -21,6 +21,17 @@ typedef vector<vii> vvii;
 #define max_heap(x) priority_queue<x>
 #define min_heap(x) priority_queue<x, vector<x>, greater<x>>
 
+// ------------------------------ Explanation ------------------------------ //
+// dp[i][j] represents minimum number of cuts required to cut a rectangle of dimensions 
+// i * j into squares
+// We can either cut horizontally or vertically
+// If we cut vertically, we need to check if we can cut the rectangle of dimensions
+// i * j into rectangles of dimensions i * k and i * (j - k) where k ranges from 1 to j/2
+// If we cut horizontally, we need to check if we can cut the rectangle of dimensions
+// i * j into rectangles of dimensions k * j and (i - k) * j where k ranges from 1 to i/2
+// For i * j, where i = j, we don't need to cut
+// -------------------------------------------------------------------------- //
+
 void solve(){
     int a, b;
     cin >> a >> b;
