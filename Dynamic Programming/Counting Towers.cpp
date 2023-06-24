@@ -21,6 +21,14 @@ typedef vector<vii> vvii;
 #define max_heap(x) priority_queue<x>
 #define min_heap(x) priority_queue<x, vector<x>, greater<x>>
 
+// ------------------------------ Explanation ------------------------------ //
+// For the top row, either both blocks are part of separate blocks or the same block
+// This leads to a recurrence relation of two functions
+// a(n) = 2 * a(n-1) + b(n-1)
+// b(n) = a(n-1) + 4 * b(n-1)
+// Used matrix exponentiation to solve the recurrence relation
+// -------------------------------------------------------------------------- //
+
 vvi multiply(vvi m, int e, int n){
     if (e == 1) return m;
     vvi res(n, vi(n, 0));

@@ -20,6 +20,13 @@ typedef vector<vii> vvii;
 #define tc int t; cin>>t; while(t--)
 #define max_heap(x) priority_queue<x>
 #define min_heap(x) priority_queue<x, vector<x>, greater<x>>
+
+// ------------------------------ Explanation ------------------------------ //
+// dp[i][j] represents whether sum i can be made using first j elements
+// We can either include the jth element or not
+// If we include the jth element, we need to check if sum i - a[j] can be made using first j - 1 elements
+// If we don't include the jth element, we need to check if sum i can be made using first j - 1 elements
+// -------------------------------------------------------------------------- //
  
 void solve(){
     int n;
