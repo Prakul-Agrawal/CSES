@@ -22,6 +22,13 @@ typedef vector<vii> vvii;
 #define max_heap(x) priority_queue<x>
 #define min_heap(x) priority_queue<x, vector<x>, greater<x>>
 
+// ------------------------------ Explanation ------------------------------ //
+// dp[i] represents minimum number of coins required to make sum i
+// For each i, we can check if we can make i using jth coin by checking if
+// we can make i - c[j] using the coins as well
+// If it is possible to make it, we take the minimum value of dp[i] and dp[i-c[j]] + 1
+// -------------------------------------------------------------------------- //
+
 void solve(){
     int n,x,temp;
     cin >> n >> x;
