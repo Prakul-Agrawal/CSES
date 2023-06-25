@@ -22,6 +22,15 @@ typedef vector<vii> vvii;
 #define max_heap(x) priority_queue<x>
 #define min_heap(x) priority_queue<x, vector<x>, greater<x>>
 
+// ------------------------------ Explanation ------------------------------ //
+// This problem is the same as Knapsack
+// dp[i][j] represents maximum number of pages that can be bought from the first
+// i books with j money
+// We can either buy the jth book or not. If we buy it, we have to subtract its
+// cost from j and add its pages to dp[i][j]. If we don't buy it, we just copy
+// dp[i-1][j] to dp[i][j]
+// -------------------------------------------------------------------------- //
+
 void solve(){
     int n,x;
     cin >> n >> x;
