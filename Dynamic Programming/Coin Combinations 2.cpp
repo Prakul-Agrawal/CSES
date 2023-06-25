@@ -22,6 +22,13 @@ typedef vector<vii> vvii;
 #define max_heap(x) priority_queue<x>
 #define min_heap(x) priority_queue<x, vector<x>, greater<x>>
 
+// ------------------------------ Explanation ------------------------------ //
+// dp[i] represents number of ways to make sum i
+// It is similar to Coin Combinations 1, but we have to take care of the order
+// Hence, we iterate over the coins first and then the sums
+// This ensures that the sum is made in the order of the coins that were given
+// -------------------------------------------------------------------------- //
+
 void solve(){
     int n,x;
     cin >> n >> x;
