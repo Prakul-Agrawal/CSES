@@ -21,6 +21,13 @@ typedef vector<vii> vvii;
 #define max_heap(x) priority_queue<x>
 #define min_heap(x) priority_queue<x, vector<x>, greater<x>>
 
+//----------------------------- Explanation -----------------------------//
+// This problem is a simple application of DFS
+// Each time you find a unvisited node, you start a new component and 
+// after reaching all accessible nodes from that node, you increment the
+// count of components by 1
+// ----------------------------------------------------------------------//
+
 void dfs(int n, int m, vvi &vis, int x, int y, vector<string> &adj){
     vis[x][y] = 1;
     if (x - 1 >= 0 && adj[x-1][y] == '.' && !vis[x-1][y]) dfs(n, m, vis, x-1, y, adj);
