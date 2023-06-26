@@ -22,6 +22,13 @@ typedef vector<vii> vvii;
 #define max_heap(x) priority_queue<x>
 #define min_heap(x) priority_queue<x, vector<x>, greater<x>>
 
+// ------------------------------ Explanation ------------------------------ //
+// Iterate through the string and keep track of the last character that was
+// encountered. If the current character is the same as the last character,
+// increment the length of current substring. Else, reset the length to 1, 
+// update the last character and update maximum length
+// -------------------------------------------------------------------------- //
+
 void solve(){
     string s; cin >> s;
     char prev = ' ';
