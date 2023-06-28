@@ -22,6 +22,12 @@ typedef vector<vii> vvii;
 #define max_heap(x) priority_queue<x>
 #define min_heap(x) priority_queue<x, vector<x>, greater<x>>
 
+// ------------------------------ Explanation ------------------------------ //
+// As you iterate through the array, you ensure that no element is less than
+// the previous element. If it is, you add the difference to the count and
+// make the current element equal to the previous element.
+// -------------------------------------------------------------------------- //
+
 void solve(){
     int n; cin >> n;
     vi a(n);
